@@ -61,3 +61,26 @@ class Point {
 
 
 }
+class Canvas
+{
+    private List<Point> points;
+    public Canvas() {
+        points = new ArrayList<>();
+    }
+
+    public void addAPoint(Point p)
+    {
+        this.points.add(p);
+    }
+    public void removeAPoint(Point p)
+    {
+        this.points.remove(p);
+    }
+    public void moveAPoint(char x,char y)
+    {
+        Iterator<Point> iterator = points.iterator();
+        while (iterator.hasNext()) {
+            iterator.next().move(x, y);
+        }
+    }
+}
